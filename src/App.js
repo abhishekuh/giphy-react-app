@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router ,Switch , Route } from "react-router-dom";
+import Home from './components/Home'
 import './App.css';
+import GifDetail from "./components/GifDetail";
+
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+// import rootReducer from './reducers'
+// const store = createStore(rootReducer)
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="theme-color">
+    <div className="content">
+      {/* <Provider store={store}> */}
+      <Router>
+      <Switch>
+        <Route exact path="/" component={Home}></Route>
+        <Route path="/gif/:id" component={GifDetail}></Route>
+      </Switch>
+      </Router>
+      {/* </Provider> */}
+    </div>
     </div>
   );
 }
