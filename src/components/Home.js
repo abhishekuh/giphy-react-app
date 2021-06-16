@@ -17,7 +17,6 @@ const Home = () => {
         .then(Response => Response.json()
         )
         .then((data) => {
-            console.log(data.data);
             setGifs(data.data)
         })
         .catch(err => {
@@ -30,6 +29,7 @@ const Home = () => {
 
     return (
         <div>
+            <h2 className="text-color page-heading">Gif List</h2>
             <button onClick={() => setQuery('Cats')}>Cats</button>
             <button onClick={() => setQuery('Dogs')}>Dogs</button>
             {gifs && <GifList gifData={gifs} />}
