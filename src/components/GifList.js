@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { isValidElement } from 'react';
 import { Link } from "react-router-dom";
+
+// rendering the data ie. image and link  obtained from property gifData 
 
 const GifList = ({ gifData }) => {
     return (

@@ -4,14 +4,15 @@ import GifList from "../components/GifList";
 const Home = () => {
 
     const api_key = 'ergeCeWw1Vt79tKTxHKreQjO3FAclx2Y'
-    // const queryParam = 'cats'
 
     const [query,setQuery] = useState('cats')
 
     const [gifs,setGifs] = useState([])
 
+    // the below function queries the cats or dogs based on the value of the state 'query' which is modified using button
+    // and then the data returned is set in the 'gifs' array.
+
     useEffect(() => {
-        // setTimeout(() => { 
         const fetchData = async () => { 
         await fetch(`http://api.giphy.com/v1/gifs/search?api_key=${api_key}&q=${query}&limit=25`,{method: "GET"})
         .then(Response => Response.json()
@@ -24,7 +25,6 @@ const Home = () => {
         });
         }
         fetchData();
-    // },1000)
     },[query]);
 
     return (

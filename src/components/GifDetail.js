@@ -13,10 +13,10 @@ const GifDetail = () => {
     const[loading,setLoading] = useState(true)
     
     useEffect(() => {
-        setTimeout(() => { 
         fetchData()
-    },1000)
     },[]);
+
+    // The below function returns the data for a particular gif by taking the id obtained from the url by using the useParams function. 
 
     const fetchData = async () => { 
         const response = await fetch(`http://api.giphy.com/v1/gifs/${id}?api_key=${api_key}`)

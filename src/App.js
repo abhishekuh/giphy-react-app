@@ -3,23 +3,18 @@ import Home from './components/Home'
 import './App.css';
 import GifDetail from "./components/GifDetail";
 
-import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-// import rootReducer from './reducers'
-// const store = createStore(rootReducer)
+// The components home and gif detail are rendered when the respective path is entered
 
 function App() {
   return (
     <div className="theme-color">
     <div className="content">
-      {/* <Provider store={store}> */}
       <Router>
       <Switch>
         <Route exact path="/" component={Home}></Route>
         <Route path="/gif/:id" component={GifDetail}></Route>
       </Switch>
       </Router>
-      {/* </Provider> */}
     </div>
     </div>
   );
